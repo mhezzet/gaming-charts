@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Table } from './Table'
 
-const SERVER_URL = 'api'
+const SERVER_URL = 'http://localhost:8080'
 
 export const App = () => {
   const [playTimeGenre, setPlayTimeGenre] = useState('')

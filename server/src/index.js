@@ -26,4 +26,15 @@ app.get('/select_top_by_players', (req, res) => {
   res.json(select_top_by_players({ dataSet: data, genre, platform }))
 })
 
+app.get('/paginated_gamers', (req, res) => {
+  const pageNo = parseInt(req.query.pageNo)
+  const size = parseInt(req.query.size)
+
+  const games = select_top_by_playtime({ dataSet: data })
+  const startIndx = (pageNo - 1) * size
+  const endIndex = startIndx + size
+
+  res.json(games.slice(startIndx, endIndex))
+})
+
 app.listen(PORT, () => console.log(`listening on ${PORT}`))

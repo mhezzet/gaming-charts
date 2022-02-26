@@ -1,0 +1,3 @@
+### pagination
+
+GET http://localhost:8080/paginated_gamers?size=3&pageNo=2
